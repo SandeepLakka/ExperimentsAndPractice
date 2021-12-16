@@ -9,7 +9,7 @@ import java.util.Optional;
  * Input : arr[] = {1, 2, 3}       --->    Output : arr[] = {3, 2, 1}
  * <p>
  * Input :  arr[] = {4, 5, 1, 2}    --->    Output : arr[] = {2, 1, 5, 4}
- * For invalid inputs (nulls), throw InvalidArgumentException
+ * For invalid inputs (nulls), throw IllegalArgumentException
  * <p>
  * Bonus: Implement it using generics to pass any datatype array
  * <p>
