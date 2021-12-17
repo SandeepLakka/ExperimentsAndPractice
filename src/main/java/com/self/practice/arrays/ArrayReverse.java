@@ -1,6 +1,5 @@
 package com.self.practice.arrays;
 
-import java.util.Optional;
 
 /**
  * Problem Statement : Reverse an array in place.
@@ -21,26 +20,8 @@ import java.util.Optional;
 
 public class ArrayReverse {
 
+//TODO write some naive/bruteforce and then some other solutions
 
-    public String naiveSolution(String input) {
-
-        return Optional.ofNullable(input).map(s -> {
-            StringBuilder sb = new StringBuilder();
-            for (int i = input.length(); i > 0; i--) {
-                sb.append(input.substring(i - 1, i));
-            }
-            return sb.toString();
-        }).orElseThrow(() -> new IllegalArgumentException("Please enter non-null string"));
-    }
-
-    public String stringBuilderSolution(String input) {
-
-        return Optional.ofNullable(input).map(StringBuilder::new)
-                .map(StringBuilder::reverse)
-                .orElseThrow(IllegalArgumentException::new)
-                .toString();
-
-    }
 
 
 }
