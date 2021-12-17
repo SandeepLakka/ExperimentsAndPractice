@@ -1,5 +1,6 @@
 package com.self.practice.arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,5 +43,43 @@ public class TwoSum {
         return null;
     }
     //TODO Try writing programs which have sub-quadratic time complexity without using map or similar datastructure
+
+    //O(NlogN) time complexity with O(N) space complexity without using maps
+    //Bit crude, has chance to refactor to be cute/cuter
+    public int[] subQuadSolutionWithoutMaps(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        //O(N) space complexity to return appropriate indices  if there is 2 sum
+        int[] original = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            original[i] = nums[i];
+        }
+        //O(NlogN) time complexity assuming merge sort )
+        Arrays.sort(nums);
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == target) {
+                return new int[]{getIndex(original, -1, nums[left]), getIndex(original, getIndex(original, -1, nums[left]), nums[right])};
+            }
+            if (sum > target) {
+                right--;
+            } else {
+                left++;
+            }
+        }
+        return null;
+    }
+
+    int getIndex(int[] original, int existing, int value) {
+        for (int i = 0; i < original.length; i++) {
+            if (i == existing) continue;
+            if (original[i] == value) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }
