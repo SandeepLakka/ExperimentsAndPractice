@@ -1,5 +1,8 @@
 package com.self.practice.arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Problem Statement : Given an input array <b>nums</b> and an integer <b>k</b> ,
  * return indices of array <b>nums</b> of the two numbers such that they
@@ -15,8 +18,29 @@ package com.self.practice.arrays;
  */
 public class TwoSum {
 
-    //TODO complete bruteforce/naive solution with quadratic time complexity
-    //TODO complete writing programs which solve this in sub-quadratic time complexity
+    public int[] naiveSolution(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) return new int[]{i, j};
+            }
+        }
+        return null;
+    }
+
+    public int[] mapBasedSolution(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        int complement;
+        for (int i = 0; i < nums.length; i++) {
+            complement = target - nums[i];
+            if (map.containsKey(complement) && map.get(complement) != i) {
+                return new int[]{i, map.get(complement)};
+            }
+        }
+        return null;
+    }
     //TODO Try writing programs which have sub-quadratic time complexity without using map or similar datastructure
 
 }
