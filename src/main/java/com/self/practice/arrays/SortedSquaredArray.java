@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class SortedSquaredArray {
 
-    //TODO bruteforce
+    //bruteforce
     public int[] naiveSolution(int[] nums) {
         int[] sortedArray = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -22,7 +22,7 @@ public class SortedSquaredArray {
         return sortedArray;
     }
 
-    //TODO clever approaches
+    //clever approaches
     public int[] mergeSolution(int[] nums) {
         int index = -1;
         boolean isNegatives = nums[0] < 0;
