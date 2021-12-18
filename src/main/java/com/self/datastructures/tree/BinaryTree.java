@@ -8,15 +8,6 @@ package com.self.datastructures.tree;
  */
 public class BinaryTree {
 
-    static class Node {
-        int data;
-        Node left;
-        Node right;
-        Node(int data) {
-            this.data = data;
-        }
-    }
-
     /**
      * Only implementing binary tree. Traversal would be implemented in different class
      */
@@ -26,6 +17,15 @@ public class BinaryTree {
         root.right = new Node(30);
         root.left.left = new Node(40);
         root.left.right = new Node(50);
+    }
+}
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+    Node(int data) {
+        this.data = data;
     }
 }
 
