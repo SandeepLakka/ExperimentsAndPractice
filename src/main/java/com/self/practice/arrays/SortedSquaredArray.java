@@ -100,6 +100,27 @@ public class SortedSquaredArray {
             return sortedArr;
         }
     }
+
+    /**
+     * Two pointer approach
+     */
+    public int[] twoPointerApproach(int[] nums){
+        int[] newArr = new int[nums.length];
+        int i = nums.length-1;
+        for(int l=0,r=nums.length-1; l<=r;) {
+            if(Math.abs(nums[l]) < Math.abs(nums[r])){
+                newArr[i] = Math.abs(nums[r])*Math.abs(nums[r]);
+                i--; r--;
+            } else if (Math.abs(nums[l]) > Math.abs(nums[r])){
+                newArr[i] = Math.abs(nums[l])*Math.abs(nums[l]);
+                i--;l++;
+            } else {
+                newArr[i] = Math.abs(nums[r])*Math.abs(nums[r]);
+                l++;
+            }
+        }
+        return newArr;
+    }
     //TODO cleverer approaches
 
 }

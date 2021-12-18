@@ -40,4 +40,20 @@ class SortedSquaredArrayTest {
         assertArrayEquals(testObject.mergeSolution(new int[]{-4, -1}),
                 new int[]{1, 16});
     }
+
+    @Test
+    void testTwoPointerSolution() {
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{-4, -3, -1}),
+                new int[]{1, 9, 16});
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{-4, -3, -1, 0}),
+                new int[]{0, 1, 9, 16});
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{-4, -1, 0, 3, 10}),
+                new int[]{0, 1, 9, 16, 100});
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{-4, -1, 0, 3, 10}),
+                new int[]{0, 1, 9, 16, 100});
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{0, 0, 1, 2, 3}),
+                new int[]{0, 0, 1, 4, 9});
+        assertArrayEquals(testObject.twoPointerApproach(new int[]{-4, -1}),
+                new int[]{1, 16});
+    }
 }
