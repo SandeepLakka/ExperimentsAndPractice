@@ -23,7 +23,83 @@ public class SortedSquaredArray {
     }
 
     //TODO clever approaches
+    public int[] mergeSolution(int[] nums) {
+        int index = -1;
+        boolean isNegatives = nums[0] < 0;
+        //Finding the index at which the sign shift happens (if there's any)
+        if (nums[0] < 0 && nums[nums.length - 1] >= 0) {
+            for (int i = nums.length - 1; i >= 0; i--) {
+                if (nums[i] < 0) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        //Square the input array elements
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] *= nums[i];
+        }
 
+        if (index == -1) {
+            if (!isNegatives) {
+                //all non-negatives case
+                //Return squared input array
+                return nums;
+            } else {
+                //all negatives case
+                //Return reversed squared inputs array
+                int temp;
+                int left = 0;
+                int right = nums.length - 1;
+                while (left < right) {
+                    temp = nums[left];
+                    nums[left] = nums[right];
+                    nums[right] = temp;
+                    left++;
+                    right--;
+                }
+                return nums;
+            }
+        } else {
+            //mixed inputs ( -ves, non -ves ) : Real meat!!
+            int positives = index + 1;
+            int negatives = index;
+            //O(N) space for now.
+            //Will try for inplace modification later
+            int[] sortedArr = new int[nums.length];
+            int ind = 0;
+            while (ind < nums.length) {
+                //edge case 1
+                if (positives == nums.length) {
+                    while (negatives >= 0) {
+                        sortedArr[ind] = nums[negatives];
+                        negatives--;
+                        ind++;
+                    }
+                    break;
+                }
+                //edge case 2
+                if (negatives == -1) {
+                    while (positives < nums.length) {
+                        sortedArr[ind] = nums[positives];
+                        positives++;
+                        ind++;
+                    }
+                    break;
+                }
+                //normal check
+                if (nums[negatives] < nums[positives]) {
+                    sortedArr[ind] = nums[negatives];
+                    negatives--;
+                } else {
+                    sortedArr[ind] = nums[positives];
+                    positives++;
+                }
+                ind++;
+            }
+            return sortedArr;
+        }
+    }
     //TODO cleverer approaches
 
 }
