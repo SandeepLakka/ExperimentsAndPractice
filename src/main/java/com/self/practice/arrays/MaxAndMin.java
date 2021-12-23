@@ -2,6 +2,11 @@ package com.self.practice.arrays;
 
 import com.self.exception.NotYetImplementedException;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 /**
  * Problem Statement:   Find the maximum and minimum elements in an array of integers with minimum number of comparisons
  * And also explain the number of comparisons done for result
@@ -11,9 +16,11 @@ import com.self.exception.NotYetImplementedException;
  */
 public class MaxAndMin {
 
-    //TODO bruteforce solution
+    //bruteforce solution
     public int[] naiveSolution(int[] arr) {
-        throw new NotYetImplementedException();
+        if (arr == null || arr.length == 0) return arr;
+        IntSummaryStatistics stats = Arrays.stream(arr).summaryStatistics();
+        return new int[]{stats.getMax(), stats.getMin()};
     }
 
     //TODO clever approach
