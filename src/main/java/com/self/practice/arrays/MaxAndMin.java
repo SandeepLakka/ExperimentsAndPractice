@@ -13,27 +13,39 @@ import java.util.IntSummaryStatistics;
 public class MaxAndMin {
 
     //bruteforce solution
+    //Number of Comparisons = 2N
     public int[] naiveSolution(int[] arr) {
         if (arr == null || arr.length == 0) return arr;
         IntSummaryStatistics stats = Arrays.stream(arr).summaryStatistics();
         return new int[]{stats.getMax(), stats.getMin()};
     }
 
+    //Number of Comparisons = 2(N-2) + 1 in worst case, N - 1 in best case
     public int[] naiveSolutionV2(int[] arr) {
         if (arr == null || arr.length == 0) return arr;
+
+        if (arr.length < 2) return new int[]{arr[0], arr[0]};
+
         int min, max;
-        min = Integer.MAX_VALUE;
-        max = Integer.MIN_VALUE;
-        for (int num : arr) {
-            if (num < min) min = num;
-            if (num > max) max = num;
+
+        if (arr[0] > arr[1]) {
+            min = arr[1];
+            max = arr[0];
+        } else {
+            min = arr[0];
+            max = arr[1];
+        }
+
+        for (int idx = 2; idx < arr.length; idx++) {
+            if (arr[idx] < min) min = arr[idx];
+            else if (arr[idx] > max) max = arr[idx];
         }
         return new int[]{max, min};
     }
 
     //TODO clever approach
-    //O(N) seems good approach to this problem.
-    //Unless sorted we can't do it in sub linear time I suppose
+    //There are other approaches by name "Tournament Method"
+    //And "Compare in Pairs" method both with 3n/2 -2 operations
 
 
 }
