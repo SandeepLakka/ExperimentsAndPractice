@@ -1,11 +1,7 @@
 package com.self.practice.arrays;
 
-import com.self.exception.NotYetImplementedException;
-
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * Problem Statement:   Find the maximum and minimum elements in an array of integers with minimum number of comparisons
@@ -23,6 +19,21 @@ public class MaxAndMin {
         return new int[]{stats.getMax(), stats.getMin()};
     }
 
+    public int[] naiveSolutionV2(int[] arr) {
+        if (arr == null || arr.length == 0) return arr;
+        int min, max;
+        min = Integer.MAX_VALUE;
+        max = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+        return new int[]{max, min};
+    }
+
     //TODO clever approach
+    //O(N) seems good approach to this problem.
+    //Unless sorted we can't do it in sub linear time I suppose
+
 
 }
