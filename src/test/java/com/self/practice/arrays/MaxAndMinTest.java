@@ -21,6 +21,7 @@ class MaxAndMinTest {
         assertArrayEquals(testObject.naiveSolution(new int[]{}), new int[]{});
         assertArrayEquals(testObject.naiveSolution(new int[]{1000, 11, 445, 1, 330, 3000}), new int[]{3000, 1});
         assertArrayEquals(testObject.naiveSolution(new int[]{-1, 10, 200, 120, 500, 100}), new int[]{500, -1});
+        assertArrayEquals(testObject.naiveSolution(new int[]{1, 1, 1, 1}), new int[]{1, 1});
     }
 
     @Test
@@ -29,5 +30,6 @@ class MaxAndMinTest {
         assertArrayEquals(testObject.naiveSolutionV2(new int[]{}), new int[]{});
         assertArrayEquals(testObject.naiveSolutionV2(new int[]{1000, 11, 445, 1, 330, 3000}), new int[]{3000, 1});
         assertArrayEquals(testObject.naiveSolutionV2(new int[]{-1, 10, 200, 120, 500, 100}), new int[]{500, -1});
+        assertArrayEquals(testObject.naiveSolutionV2(new int[]{1, 1, 1, 1}), new int[]{1, 1});
     }
 }
