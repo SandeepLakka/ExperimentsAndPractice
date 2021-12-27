@@ -16,18 +16,18 @@ class KthMaxAndMinTest {
     @Test
     void test_naiveSolution() {
         assertNull(testObject.naiveSolution(null, 1));
-        assertArrayEquals(testObject.naiveSolution(new int[]{7, 10, 4, 3, 20, 15}, 3), new int[]{10, 7});
-        assertArrayEquals(testObject.naiveSolution(new int[]{1, 1, 1}, 2), new int[]{1, 1});
-        assertArrayEquals(testObject.naiveSolution(new int[]{0}, 1), new int[]{0, 0});
-        assertArrayEquals(testObject.naiveSolution(new int[]{-1, -2, -3, 0, 3, 2, 1}, 2), new int[]{2, -2});
+        assertArrayEquals(new int[]{10, 7}, testObject.naiveSolution(new int[]{7, 10, 4, 3, 20, 15}, 3));
+        assertArrayEquals(new int[]{1, 1}, testObject.naiveSolution(new int[]{1, 1, 1}, 2));
+        assertArrayEquals(new int[]{0, 0}, testObject.naiveSolution(new int[]{0}, 1));
+        assertArrayEquals(new int[]{2, -2}, testObject.naiveSolution(new int[]{-1, -2, -3, 0, 3, 2, 1}, 2));
     }
 
     @Test
     void test_heapSolution() {
         assertNull(testObject.heapSolution(null, 1));
-        assertArrayEquals(testObject.heapSolution(new int[]{7, 10, 4, 3, 20, 15}, 3), new int[]{10, 7});
-        assertArrayEquals(testObject.heapSolution(new int[]{1, 1, 1}, 2), new int[]{1, 1});
-        assertArrayEquals(testObject.heapSolution(new int[]{0}, 1), new int[]{0, 0});
-        assertArrayEquals(testObject.heapSolution(new int[]{-1, -2, -3, 0, 3, 2, 1}, 2), new int[]{2, -2});
+        assertArrayEquals(new int[]{10, 7}, testObject.heapSolution(new int[]{7, 10, 4, 3, 20, 15}, 3));
+        assertArrayEquals(new int[]{1, 1}, testObject.heapSolution(new int[]{1, 1, 1}, 2));
+        assertArrayEquals(new int[]{0, 0}, testObject.heapSolution(new int[]{0}, 1));
+        assertArrayEquals(new int[]{2, -2}, testObject.heapSolution(new int[]{-1, -2, -3, 0, 3, 2, 1}, 2));
     }
 }

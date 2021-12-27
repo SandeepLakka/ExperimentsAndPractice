@@ -17,17 +17,17 @@ class ArrayReverseTest {
 
     @Test
     void test_naiveSolution() {
-        assertArrayEquals(testObject.naiveSolution(new int[]{4, 5, 1, 2}), new int[]{2, 1, 5, 4});
-        assertArrayEquals(testObject.naiveSolution(new int[]{1, 2, 3}), new int[]{3, 2, 1});
-        assertArrayEquals(testObject.naiveSolution(new int[]{}), new int[]{});
+        assertArrayEquals(new int[]{2, 1, 5, 4}, testObject.naiveSolution(new int[]{4, 5, 1, 2}));
+        assertArrayEquals(new int[]{3, 2, 1}, testObject.naiveSolution(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{}, testObject.naiveSolution(new int[]{}));
         assertNull(testObject.naiveSolution(null));
     }
 
     @Test
     void test_solveItWithTwoPointer() {
-        assertArrayEquals(testObject.solveItWithTwoPointer(new int[]{4, 5, 1, 2}), new int[]{2, 1, 5, 4});
-        assertArrayEquals(testObject.solveItWithTwoPointer(new int[]{1, 2, 3}), new int[]{3, 2, 1});
-        assertArrayEquals(testObject.solveItWithTwoPointer(new int[]{}), new int[]{});
+        assertArrayEquals(new int[]{2, 1, 5, 4}, testObject.solveItWithTwoPointer(new int[]{4, 5, 1, 2}));
+        assertArrayEquals(new int[]{3, 2, 1}, testObject.solveItWithTwoPointer(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{}, testObject.solveItWithTwoPointer(new int[]{}));
         assertNull(testObject.solveItWithTwoPointer(null));
     }
 }

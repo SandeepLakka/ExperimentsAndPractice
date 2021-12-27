@@ -18,8 +18,8 @@ class MinimizeHeightsTest {
     @Disabled("YTD")
     @Test
     public void test_naiveSolution() {
-        assertEquals(testObject.naiveSolution(new int[]{1, 5, 8, 10}, 2), 5);
-        assertEquals(testObject.naiveSolution(new int[]{3, 9, 12, 16, 20}, 3), 11);
+        assertEquals(5, testObject.naiveSolution(new int[]{1, 5, 8, 10}, 2));
+        assertEquals(11, testObject.naiveSolution(new int[]{3, 9, 12, 16, 20}, 3));
 
     }
 

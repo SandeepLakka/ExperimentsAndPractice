@@ -18,22 +18,22 @@ class TwoSumTest {
 
     @Test
     void test_naiveSolution() {
-        assertArrayEquals(testObject.naiveSolution(new int[]{2, 7, 11, 15}, 9), new int[]{0, 1});
-        assertArrayEquals(testObject.naiveSolution(new int[]{3, 2, 4}, 6), new int[]{1, 2});
+        assertArrayEquals(new int[]{0, 1}, testObject.naiveSolution(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{1, 2}, testObject.naiveSolution(new int[]{3, 2, 4}, 6));
         assertNull(testObject.naiveSolution(new int[]{1, 3, 5}, 10));
     }
 
     @Test
     void test_mapBasedSolution() {
-        assertArrayEquals(testObject.mapBasedSolution(new int[]{2, 7, 11, 15}, 9), new int[]{0, 1});
-        assertArrayEquals(testObject.mapBasedSolution(new int[]{3, 2, 4}, 6), new int[]{1, 2});
+        assertArrayEquals(new int[]{0, 1}, testObject.mapBasedSolution(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{1, 2}, testObject.mapBasedSolution(new int[]{3, 2, 4}, 6));
         assertNull(testObject.mapBasedSolution(new int[]{1, 3, 5}, 10));
     }
 
     @Test
     void test_subQuadSolutionWithoutMaps() {
-        assertArrayEquals(testObject.subQuadSolutionWithoutMaps(new int[]{2, 7, 11, 15}, 9), new int[]{0, 1});
-        assertArrayEquals(testObject.subQuadSolutionWithoutMaps(new int[]{3, 2, 4}, 6), new int[]{1, 2});
+        assertArrayEquals(new int[]{0, 1}, testObject.subQuadSolutionWithoutMaps(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{1, 2}, testObject.subQuadSolutionWithoutMaps(new int[]{3, 2, 4}, 6));
         assertNull(testObject.subQuadSolutionWithoutMaps(new int[]{1, 3, 5}, 10));
     }
 }

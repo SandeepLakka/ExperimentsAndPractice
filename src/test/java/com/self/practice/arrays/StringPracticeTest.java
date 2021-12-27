@@ -16,17 +16,17 @@ class StringPracticeTest {
 
     @Test
     void test_naiveSolution() {
-        assertEquals(testObject.naiveSolution("hello"), "olleh");
-        assertEquals(testObject.naiveSolution("world"), "dlrow");
-        assertEquals(testObject.naiveSolution(""), "");
+        assertEquals("olleh", testObject.naiveSolution("hello"));
+        assertEquals("dlrow", testObject.naiveSolution("world"));
+        assertEquals("", testObject.naiveSolution(""));
         assertThrows(IllegalArgumentException.class, () -> testObject.naiveSolution(null));
     }
 
     @Test
     void test_stringBuilderSolution() {
-        assertEquals(testObject.stringBuilderSolution("hello"), "olleh");
-        assertEquals(testObject.stringBuilderSolution("world"), "dlrow");
-        assertEquals(testObject.stringBuilderSolution(""), "");
+        assertEquals("olleh", testObject.stringBuilderSolution("hello"));
+        assertEquals("dlrow", testObject.stringBuilderSolution("world"));
+        assertEquals("", testObject.stringBuilderSolution(""));
         assertThrows(IllegalArgumentException.class, () -> testObject.stringBuilderSolution(null));
     }
 }
