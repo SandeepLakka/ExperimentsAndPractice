@@ -3,6 +3,8 @@ package com.self.practice.arrays;
 
 import com.self.exception.NotYetImplementedException;
 
+import java.util.Arrays;
+
 /**
  * Problem Statement : Given an array <b>arr</b> consisting of heights of towers, and a positive integer <b>K</b>,
  * you have to modify the height of each tower either by increasing or decreasing them by K only once.
@@ -24,7 +26,34 @@ import com.self.exception.NotYetImplementedException;
  */
 public class MinimizeHeights {
 
-    public int naiveSolution(int[] arr, int K) {
-        throw new NotYetImplementedException();
+    //O(NlogN) time O(N) space due to sorting
+    public int naiveSolution(int[] arr, int k) {
+        Arrays.sort(arr);
+        int min = arr[0] + k;
+        int max = arr[arr.length - 1] + (arr[arr.length - 1] - k >= 0 ? -k : k);
+        return Math.abs(max - min);
+    }
+
+    //Linear time and constant space
+    public int better(int[] arr, int k) {
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int val : arr) {
+            if (val < min) {
+                min = val;
+            }
+            if (val > max) {
+                max = val;
+            }
+        }
+        //<pre>
+        //Max height    Min height      Resulting difference    Constraints
+        //max + k   -   ( min + k ) =>  max - min			    max + k >= 0 && min + k >= 0
+        //max + k   -   ( min - k ) =>  max - min + 2k		    max + k >= 0 && min - k >= 0
+        //max - k   -   ( min + k ) =>  max - min - 2k		    max - k >= 0 && min + k >= 0 -> max - min - 2k >= 0 -> max - min >= 2k ? max -min -2k : max -min
+        //max - k   -   ( min - k ) =>  max - min			    max - k >= 0 && min - k >= 0
+        //</pre>
+        return (max - min >= 2 * k) ? max - min - 2 * k : max - min;
     }
 }
