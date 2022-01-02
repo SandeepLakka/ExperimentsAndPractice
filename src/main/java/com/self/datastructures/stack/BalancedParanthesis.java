@@ -9,6 +9,7 @@ public class BalancedParanthesis {
     public static void main(String[] args) {
         System.out.println(isBalanced("[()]{}{[()()]()}"));
         System.out.println(isBalanced("[(])"));
+        System.out.println(isBalanced("})]"));
     }
 
     public static boolean isBalanced(String input){
@@ -18,6 +19,9 @@ public class BalancedParanthesis {
             if(eachChar=='[' || eachChar=='(' || eachChar == '{'){
                 myStack.push(eachChar);
                 continue;
+            }
+            if(myStack.isEmpty()){
+                return false;
             }
             char top = myStack.pop();
             switch(eachChar){
