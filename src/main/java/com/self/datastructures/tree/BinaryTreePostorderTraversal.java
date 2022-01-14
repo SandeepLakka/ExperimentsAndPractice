@@ -1,7 +1,7 @@
 package com.self.datastructures.tree;
 
 /**
- * Postorder traversal first traverses root then left section of tree and then right portion
+ * Postorder traversal first traverses left section of tree and then right portion then root
  *  Ex: For a binary tree with root as 10, left 20, right 30
  *  For 20, left is 40 and right is 50
  *  For 50, left is 70 and right is 80
