@@ -26,4 +26,10 @@ class LevelOrderTraversalTests {
         LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
         assertEquals("10 20 30 40 50 60 70 80 ", levelOrderTraversal.levelOrderTraversalRecursion(root));
     }
+
+    @Test
+    public void testLevelOrderTraversalUsingQueue(){
+        LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
+        assertEquals("10 20 30 40 50 60 70 80 ", levelOrderTraversal.levelOrderTraversalUsingQueue(root));
+    }
 }
