@@ -38,7 +38,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         # Comma separated paths of the generated jacoco xml files
-        #paths: 
+        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
         # Github personal token to add commits to Pull Request
         #token: 
         # The minimum code coverage that is required to pass for overall project
