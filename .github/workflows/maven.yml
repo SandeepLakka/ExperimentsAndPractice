@@ -35,7 +35,8 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: Madrapps/jacoco-report@fd4800e8a81e21bdf373438e5918b975df041d15
       uses: Madrapps/jacoco-report@v1.2
-      #with:
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         # Comma separated paths of the generated jacoco xml files
         #paths: 
         # Github personal token to add commits to Pull Request
