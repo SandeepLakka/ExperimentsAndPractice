@@ -36,7 +36,7 @@ jobs:
       # uses: Madrapps/jacoco-report@fd4800e8a81e21bdf373438e5918b975df041d15
       uses: Madrapps/jacoco-report@v1.2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        #token: ${{ secrets.GITHUB_TOKEN }}
         # Comma separated paths of the generated jacoco xml files
         paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
         # Github personal token to add commits to Pull Request
