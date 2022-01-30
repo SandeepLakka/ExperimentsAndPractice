@@ -36,7 +36,7 @@ jobs:
       # uses: Madrapps/jacoco-report@fd4800e8a81e21bdf373438e5918b975df041d15
       uses: Madrapps/jacoco-report@v1.2
       with:
-        #token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         # Comma separated paths of the generated jacoco xml files
         paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
         # Github personal token to add commits to Pull Request
@@ -55,7 +55,7 @@ jobs:
       uses: codecov/codecov-action@v2.1.0
       with:
         # Repository upload token - get it from codecov.io. Required only for private repositories
-        token: ${{ secrets.GITHUB_TOKEN }} # optional
+      #token: ${{ secrets.GITHUB_TOKEN }} # optional
         # Comma-separated list of files to upload
         #files: # optional
         # Directory to search for coverage reports.
