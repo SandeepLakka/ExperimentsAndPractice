@@ -31,6 +31,23 @@ jobs:
 #         #args: # optional
 #         # Set the sonar.projectBaseDir analysis property
 #         #projectBaseDir: # optional, default is .
+    - name: JaCoCo Report
+      # You may pin to the exact commit or the version.
+      # uses: Madrapps/jacoco-report@fd4800e8a81e21bdf373438e5918b975df041d15
+      uses: Madrapps/jacoco-report@v1.2
+      #with:
+        # Comma separated paths of the generated jacoco xml files
+        #paths: 
+        # Github personal token to add commits to Pull Request
+        #token: 
+        # The minimum code coverage that is required to pass for overall project
+        #min-coverage-overall: # optional, default is 80
+        # The minimum code coverage that is required to pass for changed files
+        #min-coverage-changed-files: # optional, default is 80
+        # Optional title for the Pull Request comment
+        #title: # optional
+        # Run the action in debug mode and get debug logs printed in console
+        #debug-mode: # optional, default is false
     - name: Codecov
       # You may pin to the exact commit or the version.
       # uses: codecov/codecov-action@f32b3a3741e1053eb607407145bc9619351dc93b
