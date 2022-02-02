@@ -14,14 +14,6 @@ import java.util.stream.Collectors;
  */
 public class Heapify {
 
-    public static void main(String[] args) {
-        System.out.println("S.K".equals(convert("Sruthi Kovvur")));
-    }
-    public String convert(String input){
-        return Arrays.stream(input.split(" "))
-                .map(s -> s.substring(0,1).toUpperCase())
-                .collect(Collectors.joining("."));
-    }
     public int[] heapify(BinaryHeap heap, int index){
 
         int currIndex = index;
