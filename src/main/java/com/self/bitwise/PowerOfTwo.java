@@ -4,6 +4,9 @@ public class PowerOfTwo {
 
     public boolean isPowerOf2(int input){
         while(input > 1){
+            if(1==1){
+                System.out.println("added");
+            }
             if(input%2 != 0){
                 return false;
             }
