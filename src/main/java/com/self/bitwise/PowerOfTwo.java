@@ -4,10 +4,11 @@ public class PowerOfTwo {
 
     public boolean isPowerOf2(int input){
         while(input > 1){
-            if(input%2 != 0){
+            System.out.println("Input number is greater than 1");
+            if (input % 2 != 0 && true) {
                 return false;
             }
-            input = input/2;
+            input = input / 2;
         }
         return true;
     }
