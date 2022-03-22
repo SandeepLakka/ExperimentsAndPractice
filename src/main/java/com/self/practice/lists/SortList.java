@@ -1,5 +1,7 @@
 package com.self.practice.lists;
 
+import org.w3c.dom.NodeList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,23 +13,12 @@ public class SortList {
 
     public static void main(String[] args) {
         SortList underTest = new SortList();
-        //underTest.printList(underTest.createListFromArray(new int[]{1,2,3,4}));
-        ListNode listNode = new ListNode(2);
-        ListNode secNode = new ListNode(4);
-        listNode.setNext(secNode);
-        ListNode thrdNode = new ListNode(5);
-        secNode.setNext(thrdNode);
-        ListNode frthNode = new ListNode(3);
-        thrdNode.setNext(frthNode);
-        ListNode fifthNode = new ListNode(1);
-        frthNode.setNext(fifthNode);
-        ListNode sixthNode = new ListNode(6);
-        fifthNode.setNext(sixthNode);
-        ListNode seventhNode = new ListNode(7);
-        sixthNode.setNext(seventhNode);
 
-        underTest.printList(listNode);
-        underTest.printList(underTest.sortList(listNode, 7));
+        ListNode node = underTest.createListFromArray(new int[]{2, 4, 5, 3, 1});
+        System.out.print("Input List  : ");
+        underTest.printList(node);
+        System.out.print("Sorted List : ");
+        underTest.printList(underTest.sortList(node, 5));
         /*
          * 2 -> 4 -> 5 -> 3 -> 1 -> 6 -> 7
          * 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
@@ -35,17 +26,22 @@ public class SortList {
          */
     }
 
-    //TODO impl
+
     public ListNode createListFromArray(int[] arr) {
         if (arr == null || arr.length == 0) return null;
         if (arr.length == 1) return new ListNode(arr[0]);
-        ListNode element = new ListNode(arr[0]);
-        ListNode pointer = element;
-        for (int i = 0; i < arr.length - 1; i++) {
-            pointer.setNext(new ListNode(arr[i + 1]));
+
+        ListNode root, pointer;
+        root = new ListNode(arr[0]);
+        pointer = root;
+        int counter = 1;
+
+        while (counter < arr.length) {
+            pointer.setNext(new ListNode(arr[counter]));
             pointer = pointer.getNext();
+            counter++;
         }
-        return element;
+        return root;
     }
 
 
