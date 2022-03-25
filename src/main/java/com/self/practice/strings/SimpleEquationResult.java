@@ -2,12 +2,17 @@ package com.self.practice.strings;
 
 import java.util.Arrays;
 
+/*
+ * Problem Statement:
+ * Given a simple equation and a value , return output of it
+ *
+ * Examples:
+ * (3x+2, 3) --> 11         // 3*3 + 2 => 9 + 2 => 11
+ * (x-1, 4) --> 3           // 4  - 1 => 3
+ * (2, 4 ) --> 2            // input is constant so we will return the same
+ *
+ */
 public class SimpleEquationResult {
-    //-x
-    //-x+2
-    //-x-2
-    //-3x+3
-    //2x+5
 
     //Weird/Lazy implementation
     public long getResult(String equation, int value) {
