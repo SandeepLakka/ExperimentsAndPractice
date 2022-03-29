@@ -10,24 +10,24 @@ public class StackPractice {
 
     private Stack<String> stringStack = new Stack<>();
 
-    {
-        try {
-            Class cls = getClass();
-            System.out.println("class name : " + cls.getName());
-            String pkgName = cls.getName().substring(0, cls.getName().lastIndexOf("."));
-            System.out.println("Package : " + pkgName);
-            Constructor constructor = cls.getConstructor();
-            System.out.println("constructor is : " + constructor.getName());
-            System.out.println("The public methods of class are : ");
-            Method[] methods = cls.getMethods();
-            for (Method method : methods) {
-                System.out.println(method.getName());
-            }
-            System.out.println(Arrays.toString(cls.getDeclaredMethods()));
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-    }
+//    {
+//        try {
+//            Class cls = getClass();
+//            System.out.println("class name : " + cls.getName());
+//            String pkgName = cls.getName().substring(0, cls.getName().lastIndexOf("."));
+//            System.out.println("Package : " + pkgName);
+//            Constructor constructor = cls.getConstructor();
+//            System.out.println("constructor is : " + constructor.getName());
+//            System.out.println("The public methods of class are : ");
+//            Method[] methods = cls.getMethods();
+//            for (Method method : methods) {
+//                System.out.println(method.getName());
+//            }
+//            System.out.println(Arrays.toString(cls.getDeclaredMethods()));
+//        } catch (NoSuchMethodException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public Stack<String> getStringStack() {
         return stringStack;
