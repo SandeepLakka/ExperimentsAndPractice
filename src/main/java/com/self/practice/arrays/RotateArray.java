@@ -2,6 +2,8 @@ package com.self.practice.arrays;
 
 import com.self.exception.NotYetImplementedException;
 
+import java.util.Arrays;
+
 /**
  * Problem Statement : Given an unsorted array <b>arr</b> of size N, rotate it by D elements (clockwise).
  * <p>
@@ -12,7 +14,16 @@ public class RotateArray {
 
     //TODO bruteforce solution
     public int[] naiveSolution(int[] arr, int D) {
-        throw new NotYetImplementedException();
+        //0, 1, 2, 3, 4     //  5
+        //2, 3, 4, 5, 6
+        //2, 3, 4, 0, 1
+        //
+        int[] res = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            int idx = (i + D) % arr.length;
+            res[i] = arr[idx];
+        }
+        return res;
     }
 
     //TODO clever approaches
