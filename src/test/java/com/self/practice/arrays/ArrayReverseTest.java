@@ -21,6 +21,7 @@ class ArrayReverseTest {
         assertArrayEquals(new int[]{3, 2, 1}, testObject.naiveSolution(new int[]{1, 2, 3}));
         assertArrayEquals(new int[]{}, testObject.naiveSolution(new int[]{}));
         assertNull(testObject.naiveSolution(null));
+        assertArrayEquals(new int[]{1}, testObject.naiveSolution(new int[]{1}));
     }
 
     @Test
@@ -29,5 +30,6 @@ class ArrayReverseTest {
         assertArrayEquals(new int[]{3, 2, 1}, testObject.solveItWithTwoPointer(new int[]{1, 2, 3}));
         assertArrayEquals(new int[]{}, testObject.solveItWithTwoPointer(new int[]{}));
         assertNull(testObject.solveItWithTwoPointer(null));
+        assertArrayEquals(new int[]{1}, testObject.naiveSolution(new int[]{1}));
     }
 }
