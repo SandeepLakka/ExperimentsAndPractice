@@ -4,6 +4,7 @@ import com.self.datastructures.Heap;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.stream.IntStream;
 
 /**
  * Problem Statement : Given an array arr[] and an integer K,
@@ -21,8 +22,8 @@ public class KthMaxAndMin {
     public int[] naiveSolution(int[] arr, int k) {
         if (arr == null || k == 0 || k > arr.length) return null;
         //Sort and then process
-        Arrays.sort(arr);
-        return new int[]{arr[arr.length - k], arr[k - 1]};
+        int[] sortedArr = IntStream.of(arr).sorted().toArray();
+        return new int[]{sortedArr[sortedArr.length - k], sortedArr[k - 1]};
     }
 
     //Heap/PriorityQueue approach
